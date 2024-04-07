@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  lab5-server:
+    build: './carpet-store-go'
+    ports:
+      - '8080:8080'
+
+  lab5-frontend:
+    build: './frontend'
+    ports:
+      - '3000:3000'
