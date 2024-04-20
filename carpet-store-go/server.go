@@ -60,13 +60,16 @@ func main() {
 		}
 	})
 
-	e.GET("/carpets", getCarpets)
-	e.GET("/carpets/:id", getCarpet)
-	e.PUT("/carpets/:id", updateCarpet)
-	e.POST("/carpets", createCarpet)
-	e.DELETE("/carpets/:id", deleteCarpet)
+	carpetsById := "/carpets/:id"
+	carpets := "/carpets"
+	carpetsOrder := "/carpets/order"
 
-	e.POST("/carpets/order", orderCarpets)
+	e.GET(carpets, getCarpets)
+	e.GET(carpetsById, getCarpet)
+	e.PUT(carpetsById, updateCarpet)
+	e.POST(carpets, createCarpet)
+	e.DELETE(carpetsById, deleteCarpet)
+	e.POST(carpetsOrder, orderCarpets)
 
 	e.Logger.Fatal(e.Start(":8080"))
 }
