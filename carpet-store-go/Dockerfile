@@ -15,4 +15,3 @@ COPY ./go.sum .
 RUN go mod download
 EXPOSE 8080
 ENTRYPOINT ["go", "run", "server.go"]
-# ENTRYPOINT ["sleep", "1000000000"]
